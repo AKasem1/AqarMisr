@@ -1,4 +1,5 @@
 import Head from "next/head";
+import HeroWrapper from "../components/Wrappers/HeroWrapper";
 
 export default function Home() {
   return (
@@ -7,9 +8,9 @@ export default function Home() {
         <title>Aqar Misr | افضل موقع عقارات</title>
         <meta name="description" content="موقع عقار مصر يعرض كل ماهو جديد في عالم العقارات في مصر بشكل عام والعاصمة الادارية بشكل خاص" />
       </Head>
-      <div>
-        
-      </div>
+      <main>
+        <HeroWrapper/>
+      </main>
     </>
   );
 }
