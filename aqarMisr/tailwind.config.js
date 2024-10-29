@@ -7,9 +7,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      fontFamily: {
+        "plex-sans": ["IBM Plex Sans Arabic", "sans-serif"],
       },
     },
   },
