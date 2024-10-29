@@ -1,6 +1,5 @@
 import React from 'react'
 
-/*************  ✨ Codeium Command ⭐  *************/
 /**
  * A section that displays the categories of properties on the website.
  *
@@ -10,7 +9,6 @@ import React from 'react'
  *
  * @returns {React.ReactElement} A section element that displays the categories.
  */
-/******  157965f1-da72-4c5d-8874-644d1453f637  *******/
 const CategoriesWrapper = () => {
   return (
     <div className='w-full p-16 flex flex-col items-center justify-center bg-gray-100 space-y-6'>
