@@ -2,6 +2,7 @@ import Head from "next/head";
 import HeroWrapper from "../components/Wrappers/HeroWrapper";
 import StatsWrapper from "@/components/Wrappers/StatsWrapper";
 import StepsWrapper from "@/components/Wrappers/StepsWrapper";
+import CategoriesWrapper from "@/components/Wrappers/CategoriesWrapper";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <HeroWrapper/>
         <StatsWrapper/>
         <StepsWrapper/>
+        <CategoriesWrapper/>
       </main>
     </>
   );
