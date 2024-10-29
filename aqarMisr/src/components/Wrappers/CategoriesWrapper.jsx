@@ -11,17 +11,17 @@ import React from 'react'
  */
 const CategoriesWrapper = () => {
   return (
-    <div className='w-full p-16 flex flex-col items-center justify-center bg-gray-100 space-y-6'>
-        <h1 className='text-3xl font-bold'>عقاراتنا</h1>
+    <div className='w-full p-16 flex flex-col items-center justify-center bg-teal-900 space-y-6'>
+        <h1 className='text-3xl font-bold text-amber-200'>عقاراتنا</h1>
         
-        <hr className='w-1/2 border-black'></hr>
+        <hr className='w-1/2 border-white'></hr>
 
-        <p>بيع وايجار</p>
+        <p className='text-amber-200'>بيع وايجار</p>
 
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10'>
-            <div className='relative'>
-                <img className='rounded-2xl h-64' src="houses_category_image.png" alt="houses category image" />
-                <p className='text-xl font-semibold absolute top-4 right-4'>شقق</p>
+            <div className='group relative'>
+                <img className='rounded-2xl h-64 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all' src="houses_category_image.png" alt="houses category image" />
+                <p className='text-xl font-semibold absolute top-4 right-4 group-hover:scale-105 transition-all'>شقق</p>
             </div>
             <div className='relative'>
                 <img className='rounded-2xl h-64' src="offices_category_image.png" alt="offices category image" />

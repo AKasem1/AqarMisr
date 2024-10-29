@@ -4,6 +4,7 @@ import StatsWrapper from "@/components/Wrappers/StatsWrapper";
 import StepsWrapper from "@/components/Wrappers/StepsWrapper";
 import CategoriesWrapper from "@/components/Wrappers/CategoriesWrapper";
 import NewsletterWrapper from "@/components/Wrappers/NewsletterWrapper";
+import PropertiesWrapper from "@/components/Wrappers/PropertiesWrapper";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <StatsWrapper/>
         <StepsWrapper/>
         <CategoriesWrapper/>
+        <PropertiesWrapper/>
         <NewsletterWrapper/>
       </main>
     </>
