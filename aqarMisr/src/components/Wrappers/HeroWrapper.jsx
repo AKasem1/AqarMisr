@@ -2,6 +2,14 @@ import React from "react";
 import PropSearchField from "../UI/PropSearchField";
 import Link from "next/link";
 
+/**
+ * A hero section for the homepage.
+ *
+ * This component displays a hero section that contains the main heading of the
+ * website, a search field, and two call-to-action buttons.
+ *
+ * @returns {React.ReactElement} A hero section element.
+ */
 const HeroWrapper = () => {
   return (
     <div className='h-[calc(100vh-112px)] bg-[url("/hero_bg.png")] flex flex-col p-6 space-y-8 items-center bg-no-repeat bg-contain bg-center text-teal-900'>

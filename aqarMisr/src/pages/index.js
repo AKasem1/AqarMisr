@@ -1,6 +1,7 @@
 import Head from "next/head";
 import HeroWrapper from "../components/Wrappers/HeroWrapper";
 import StatsWrapper from "@/components/Wrappers/StatsWrapper";
+import StepsWrapper from "@/components/Wrappers/StepsWrapper";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <main>
         <HeroWrapper/>
         <StatsWrapper/>
+        <StepsWrapper/>
       </main>
     </>
   );
