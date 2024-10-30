@@ -13,9 +13,16 @@
 html {
   scrollbar-width: thin;
   scrollbar-color: #134e4a white;
+  overflow-x: hidden;
 }
 
 body {
   user-select: none;
   font-family: "IBM Plex Sans Arabic", sans-serif;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
 }

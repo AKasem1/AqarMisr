@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const PropertyCard = (props) => {
   return (
-    <div className="min-w-64 rounded-lg border ">
+    <div className="min-w-64 rounded-lg border">
       {/* Property Image + Name*/}
       <img
         className="rounded-t-lg"
