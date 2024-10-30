@@ -22,7 +22,7 @@ const Navbar = () => {
         {/* Add Prop & Phone number */}
         <div className="flex items-center gap-10">
             <div className="flex items-center gap-4">
-                <img className="size-5" src="phone_icon.svg" alt="phone number icon"/>
+                <img className="size-5" src="/phone_icon.svg" alt="phone number icon"/>
                 <label className="text-sm">0106 285 8443</label>
             </div>
 
@@ -31,7 +31,7 @@ const Navbar = () => {
             </button>
 
             <button className="hidden">
-                <img className="size-8" src="Hamburger_icon.svg" alt="toggle menu icon" />
+                <img className="size-8" src="/Hamburger_icon.svg" alt="toggle menu icon" />
             </button>
         </div>
     </nav>

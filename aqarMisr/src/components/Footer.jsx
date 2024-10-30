@@ -17,16 +17,16 @@ const Footer = () => {
 
       <div className="flex gap-6">
         <a href="/" target="_blank">
-          <img src="linkedin_icon.svg" alt="Aqar misr Linkedin Icon" />
+          <img src="/linkedin_icon.svg" alt="Aqar misr Linkedin Icon" />
         </a>
         <a href="/" target="_blank">
-          <img src="instagram_icon.svg" alt="Aqar misr Linkedin Icon" />
+          <img src="/instagram_icon.svg" alt="Aqar misr Instagram Icon" />
         </a>
         <a href="/" target="_blank">
-          <img src="twitter_icon.svg" alt="Aqar misr Linkedin Icon" />
+          <img src="/twitter_icon.svg" alt="Aqar misr Twitter Icon" />
         </a>
         <a href="/" target="_blank">
-          <img src="facebook_icon.svg" alt="Aqar misr Linkedin Icon" />
+          <img src="/facebook_icon.svg" alt="Aqar misr Facebook Icon" />
         </a>
       </div>
     </div>
