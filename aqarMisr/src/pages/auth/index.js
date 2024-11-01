@@ -27,8 +27,8 @@ export default function Component() {
                 <meta property="og:description" content="سجل الدخول الان للتسجيل في موقع عقار مصر" />
                 <meta property="og:url" content="https://aqarmisr.com/auth" />
             </Head>
-            <div className="min-h-screen bg-[#f8f9fa] py-12 font-[system-ui]" dir="rtl">
-                <div className="container relative mx-auto max-w-[400px] px-4">
+            <div className="min-h-screen bg-gray-100 py-12">
+                <div className="container relative mx-auto max-w-sm px-4">
                     <div className="mb-8 flex justify-center gap-4 text-lg">
                         <button
                             onClick={() => !isLogin && toggleForm()}
@@ -51,14 +51,14 @@ export default function Component() {
                             onClick={() => isLogin && toggleForm()}
                             className={cn(
                                 "relative px-4 py-2 transition-colors",
-                                !isLogin ? "text-[#1d4942] font-semibold" : "text-gray-600"
+                                !isLogin ? "text-teal-900 font-semibold" : "text-gray-600"
                             )}
                         >
                             إنشاء حساب
                             {!isLogin && (
                                 <motion.div
                                     layoutId="activeTab"
-                                    className="absolute bottom-0 left-0 right-0 h-1 bg-[#e4c66c]"
+                                    className="absolute bottom-0 left-0 right-0 h-1 bg-amber-300"
                                     initial={false}
                                     transition={{ type: "spring", stiffness: 500, damping: 30 }}
                                 />
