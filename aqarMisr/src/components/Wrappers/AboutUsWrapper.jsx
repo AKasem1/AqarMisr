@@ -3,6 +3,7 @@ import React from 'react'
 const AboutUsWrapper = () => {
   return (
     <div className='w-full bg-teal-800 px-6 py-20 grid md:grid-cols-2 md:px-20 md:gap-64'>
+        
         {/* Images Section */}
         <div className='hidden md:flex gap-6'>
             <img className='h-1/2' src="about_image_1.png"/>
