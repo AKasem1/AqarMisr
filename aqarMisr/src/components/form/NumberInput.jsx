@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { cn } from "@/lib/utils";
 
-const TextInput = ({
+const NumberInput = ({
   label,
   labelIcon,
   placeholder,
@@ -22,7 +22,7 @@ const TextInput = ({
       {isRequired && <span className="text-red-500 mx-1">*</span>}
       <input
         className={cn("w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-900 focus:bg-teal-50", className)}
-        type="text"
+        type="number"
         placeholder={placeholder}
         required={isRequired}
         onChange={onChange}
@@ -33,9 +33,9 @@ const TextInput = ({
   );
 };
 
-export default TextInput;
+export default NumberInput;
 
-TextInput.propTypes = {
+NumberInput.propTypes = {
   label: PropTypes.string,
   placeholder: PropTypes.string,
   isRequired: PropTypes.bool,
