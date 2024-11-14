@@ -12,7 +12,7 @@ import React from "react";
  *
  * @returns {React.ReactElement} A section element that displays the statistics.
  */
-const StatsWrapper = () => {
+const Stats = () => {
   return (
     <div className="w-full p-16 bg-teal-900">
       <div className="grid grid-cols-1 gap-12 place-items-center text-center md:grid-cols-3 md:gap-0">
@@ -33,4 +33,4 @@ const StatsWrapper = () => {
   );
 };
 
-export default StatsWrapper;
+export default Stats;

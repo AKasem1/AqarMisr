@@ -1,6 +1,7 @@
 import React from 'react'
+import { Check } from 'lucide-react'
 
-const AboutUsWrapper = () => {
+const AboutUs = () => {
   return (
     <div className='w-full bg-teal-800 px-6 py-20 grid md:grid-cols-2 md:px-20 md:gap-64'>
         
@@ -17,12 +18,12 @@ const AboutUsWrapper = () => {
 
             {/* علامات الصح الغريبة دي */}
             <div className='flex items-center flex-row-reverse gap-4 self-end'>
-                <i className='p-2 bg-amber-200 aspect-square rounded-full text-black fa-solid fa-check'></i>
+                <Check className='p-1 bg-amber-200 aspect-square rounded-full text-black'/>
                 <p>تزويد عملائنا بكافة الخدمات الإستشارية في العقارات</p>
             </div>
 
             <div className='flex items-center flex-row-reverse gap-4 self-end'>
-                <i className='p-2 bg-amber-200 aspect-square rounded-full text-black fa-solid fa-check'></i>
+                <Check className='p-1 bg-amber-200 aspect-square rounded-full text-black'/>
                 <p>تطوير وتحديث فكرة التسويق العقاري داخل السوق المصري</p>
             </div>
 
@@ -34,4 +35,4 @@ const AboutUsWrapper = () => {
   )
 }
 
-export default AboutUsWrapper
+export default AboutUs

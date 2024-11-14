@@ -1,7 +1,7 @@
 import React from 'react'
 import PropertyListView from '../PropertyListView'
 
-const PropertiesWrapper = () => {
+const Properties = () => {
   return (
     <div className='w-full p-12 flex flex-col items-center justify-center gap-6'>
         <h1 className='text-3xl font-semibold'>أحدث المشاريع</h1>
@@ -12,4 +12,4 @@ const PropertiesWrapper = () => {
   )
 }
 
-export default PropertiesWrapper
+export default Properties

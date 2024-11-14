@@ -10,7 +10,7 @@ import React from "react";
  * @returns {React.ReactElement} A section element that displays the
  * newsletter subscription form.
  */
-const NewsletterWrapper = () => {
+const Newsletter = () => {
   return (
     <div className="w-full py-10 md:p-12 bg-teal-900 text-white text-center flex flex-col items-center justify-center space-y-6">
       <img src="newsletter_image.svg" alt="news letter image" />
@@ -36,4 +36,4 @@ const NewsletterWrapper = () => {
   );
 };
 
-export default NewsletterWrapper;
+export default Newsletter;

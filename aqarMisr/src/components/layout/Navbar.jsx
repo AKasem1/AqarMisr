@@ -27,7 +27,7 @@ const Navbar = () => {
             </div>
 
             <button className="px-7 py-2 border border-black rounded-full hover:bg-teal-900 hover:text-white transition-colors">
-                <Link href="/add-property">اضافة عقار</Link>
+                <Link href="/property/add">اضافة عقار</Link>
             </button>
 
             <button className="hidden">

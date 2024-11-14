@@ -9,7 +9,7 @@ import React from "react";
  *
  * @returns {React.ReactElement} A section element that displays the steps.
  */
-const StepsWrapper = () => {
+const Steps = () => {
   return (
     <div className="p-6 text-center md:p-32">
       <h1 className="text-3xl font-bold">كيف تستفيد من موقعنا</h1>
@@ -55,4 +55,4 @@ const StepsWrapper = () => {
   );
 };
 
-export default StepsWrapper;
+export default Steps;

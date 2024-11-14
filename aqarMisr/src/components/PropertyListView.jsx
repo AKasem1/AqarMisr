@@ -1,5 +1,5 @@
 import React from "react";
-import PropertyCard from "./UI/PropertyCard";
+import PropertyCard from "./PropertyCard";
 import {
   Carousel,
   CarouselContent,

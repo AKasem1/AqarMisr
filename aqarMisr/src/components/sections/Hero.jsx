@@ -1,5 +1,5 @@
 import React from "react";
-import PropSearchField from "../UI/PropSearchField";
+import PropSearchField from "../PropSearchField";
 import Link from "next/link";
 
 /**
@@ -10,7 +10,7 @@ import Link from "next/link";
  *
  * @returns {React.ReactElement} A hero section element.
  */
-const HeroWrapper = () => {
+const Hero = () => {
   return (
     <div className='h-[calc(100vh-112px)] bg-[url("/hero_bg.png")] flex flex-col p-6 space-y-8 items-center bg-no-repeat bg-contain bg-center text-teal-900'>
         <p className="border border-black px-6 py-2 rounded-full">أحدث المشاريع</p>
@@ -31,4 +31,4 @@ const HeroWrapper = () => {
   );
 };
 
-export default HeroWrapper;
+export default Hero;
