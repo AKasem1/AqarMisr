@@ -4,36 +4,35 @@ import BasicInfo from '@/components/AddProperty/BasicInfo';
 import Head from 'next/head';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/UI/button";
+import PropertyRequest from '@/components/dashboard/propertyRequests';
+import AddAdmin from '@/components/dashboard/addAdmin';
 
-const AddProperty = () => {
-    const [selected, setSelected] = useState("basic");
+
+const Dashboard = () => {
+    const [selectedSteps, setSelectedSteps] = useState(1);
 
     const sidebarItems = [
         {
-            id: "basic",
+            id: 1,
             icon: Home,
-            label: "المعلومات الأساسية",
-            component: <BasicInfo />
+            label: "الطلبات",
+            component: <PropertyRequest />
         },
         {
-            id: "location",
+            id: 2,
             icon: MapPin,
-            label: "معلومات الموقع"
+            label: "إضافة مشاريع"
         },
         {
-            id: "gallery",
+            id: 3,
             icon: Image,
-            label: "معرض الصور"
+            label: "إضافة أدمن",
+            component: <AddAdmin />
         },
         {
-            id: "videos",
-            icon: Video,
-            label: "الفيديوهات"
-        },
-        {
-            id: "agent",
+            id: 4,
             icon: User,
-            label: "معلومات الوكيل"
+            label: "المستخدمين"
         }
     ];
 
@@ -46,21 +45,21 @@ const AddProperty = () => {
             <div className="flex h-screen">
                 {/* Main content area */}
                 <div className="flex-1">
-                    <BasicInfo />
+                    {sidebarItems.find(item => item.id === selectedSteps)?.component}
                 </div>
-                {/* <div className="w-64 border-l bg-background" dir='rtl'>
+                <div className="w-64 border-l bg-background" dir='rtl'>
                     <div className="space-y-4 py-4">
                         <div className="px-3 py-2">
                             <div className="space-y-1">
                                 {sidebarItems.map((item) => (
                                     <Button
                                         key={item.id}
-                                        variant={selected === item.id ? "secondary" : "ghost"}
+                                        variant={selectedSteps === item.id ? "secondary" : "ghost"}
                                         className={cn(
                                             "w-full justify-start gap-2",
-                                            selected === item.id && "bg-secondary"
+                                            selectedSteps === item.id && "bg-secondary"
                                         )}
-                                        onClick={() => setSelected(item.id)}
+                                        onClick={() => setSelectedSteps(item.id)}
                                     >
                                         <item.icon className="h-4 w-4" />
                                         <span>{item.label}</span>
@@ -69,10 +68,10 @@ const AddProperty = () => {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
         </>
     );
 };
 
-export default AddProperty;
+export default Dashboard;

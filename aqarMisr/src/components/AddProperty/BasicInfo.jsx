@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import RentBasicInfo from "./RentBasicInfo";
-
 const BasicInfo = () => {
-  const [selectedType, setSelectedType] = React.useState("rent");
+  const [selectedType, setSelectedType] = useState("إيجار");
+
   return (
     <div>
       <div className="p-6 space-y-6">
@@ -11,10 +11,10 @@ const BasicInfo = () => {
             <input
               type="radio"
               name="propertyType"
-              value="rent"
+              value="إيجار"
               className="w-4 h-4"
               onChange={(e) => setSelectedType(e.target.value)}
-              checked={selectedType === "rent"}
+              checked={selectedType === "إيجار"}
             />
             <span>ايجار</span>
           </label>
@@ -23,22 +23,20 @@ const BasicInfo = () => {
             <input
               type="radio"
               name="propertyType"
-              value="buy"
+              value="تمليك"
               className="w-4 h-4"
               onChange={(e) => setSelectedType(e.target.value)}
-              checked={selectedType === "buy"}
+              checked={selectedType === "تمليك"}
             />
             <span>تمليك</span>
           </label>
         </div>
 
-        {selectedType === "rent" && <RentBasicInfo />}
+        {selectedType ? <RentBasicInfo type={selectedType} /> : null}
 
         {selectedType === "buy" && (
           <div className="border rounded-lg p-4">
-            {/* Buy form component */}
             <h2 className="text-xl font-semibold mb-4">معلومات التمليك</h2>
-            {/* Add buy specific fields here */}
           </div>
         )}
       </div>

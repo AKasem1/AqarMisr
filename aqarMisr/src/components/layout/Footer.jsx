@@ -12,7 +12,7 @@ import React from "react";
  */
 const Footer = () => {
   return (
-    <div className="w-full flex flex-col p-4 gap-4 justify-around items-center bg-slate-800 text-white sm:flex-row sm:p-6 sm:gap-0">
+    <div className="w-full flex mt-20 flex-col p-4 gap-4 justify-around items-center bg-slate-800 text-white sm:flex-row sm:p-6 sm:gap-0">
       <p>Copyright &copy; {new Date().getFullYear()}. Aqar Misr</p>
 
       <div className="flex gap-6">

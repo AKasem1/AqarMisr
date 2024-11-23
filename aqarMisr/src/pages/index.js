@@ -6,8 +6,14 @@ import Categories from "@/components/sections/Categories";
 import Newsletter from "@/components/sections/Newsletter";
 import Properties from "@/components/sections/Properties";
 import AboutUs from "@/components/sections/AboutUs";
+import { useSelector } from "react-redux";
 
 export default function Home() {
+  const user = useSelector((state) => state.auth.user);
+  const token = useSelector((state) => state.auth.token);
+  console.log('User from Redux:', user);
+  console.log('Token from Redux:', token);
+  const isAuthenticated = user? true: false;
   return (
     <>
       <Head>

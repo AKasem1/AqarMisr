@@ -1,9 +1,9 @@
 import { Check } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 
-const Select = ({options, labelIcon, label, isRequired }) => {
+const Select = ({ options, labelIcon, label, isRequired, value, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
+  const [selectedOption, setSelectedOption] = useState(value || null); // Use the `value` prop to initialize selectedOption
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -22,7 +22,8 @@ const Select = ({options, labelIcon, label, isRequired }) => {
   const toggleDropdown = () => setIsOpen(!isOpen);
 
   const handleOptionClick = (option) => {
-    setSelectedOption(option);
+    setSelectedOption(option);  // Update the selected option locally
+    onChange(option.value);  // Call the `onChange` prop to update the parent component
     setIsOpen(false);
   };
 
