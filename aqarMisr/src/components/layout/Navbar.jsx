@@ -54,7 +54,13 @@ const Navbar = () => {
             <button className="px-7 py-2 border border-black rounded-full hover:bg-teal-900 hover:text-white transition-colors">
                 <Link href="/dashboard">لوحة التحكم</Link>
             </button>
-            ) : user ? (
+            ) : 
+            user && user.type === 'employee' ? (
+              <button className="px-7 py-2 border border-black rounded-full hover:bg-teal-900 hover:text-white transition-colors">
+                  <Link href="/dashboard">لوحة التحكم</Link>
+              </button>
+              ) :
+              user ? (
             <button className="px-7 py-2 border border-black rounded-full hover:bg-teal-900 hover:text-white transition-colors">
                 <Link href="/property/add">اضافة عقار</Link>
             </button>
