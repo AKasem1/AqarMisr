@@ -4,7 +4,8 @@ import Link from "next/link";
 
 const PropertyCard = (props) => {
   return (
-    <div className="min-w-64 rounded-lg border">
+    <Link href={"/property/example1"} className="min-w-64 rounded-lg border">
+      
       {/* Property Image + Name*/}
       <img
         className="rounded-t-lg"
@@ -13,14 +14,16 @@ const PropertyCard = (props) => {
       />
       <div className="px-4 py-2 flex flex-col gap-2">
         <h1>{props.propName}</h1>
+
         {/* Property Location */}
         <div className="flex flex-row-reverse items-center">
           <img className="size-4" src="location_icon.svg" />
           <h2>{props.propLocation}</h2>
         </div>
+
         {/* Property Attributes */}
         <div className="flex justify-between">
-          {props.propAttributes.map((attribute) => {
+          {/* {props.propAttributes.map((attribute) => {
             return (
               <PropertyAttribute
                 key={attribute.id}
@@ -28,7 +31,7 @@ const PropertyCard = (props) => {
                 value={attribute.value}
               />
             );
-          })}
+          })} */}
         </div>
 
         <hr />
@@ -59,7 +62,7 @@ const PropertyCard = (props) => {
       <div className="flex justify-center py-1">
         <Link href={"/property/example1"} className="text-sky-600 font-semibold hover:text-sky-800">رؤية المزيد</Link>
       </div>
-    </div>
+    </Link>
   );
 };
 

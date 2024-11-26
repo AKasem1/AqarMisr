@@ -5,7 +5,6 @@ import Head from 'next/head'
 const index = ({ props }) => {
 
     //get productID from NextJS slug url
-
     const router = useRouter()
     const propertyId = router.query.propertyId
 

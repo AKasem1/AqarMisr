@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Swal from 'sweetalert2'
+import axios from "axios";
 
 const PropertyRequest = () => {
   const [showDetails, setShowDetails] = useState(false);
@@ -12,17 +13,13 @@ const PropertyRequest = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await fetch("/api/property/getRequests", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const response = await fetch("/api/property/getRequests");
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
+        if (response.status != 200) {
+          console.log(response)
+          throw new Error(`Http error occured in propertyRequests.js, status: ${response.status}`);
         }
-        const data = await response.json();
+        const data = await response.data;
         console.log(data)
         setRequests(data);
       } catch (error) {

@@ -18,7 +18,7 @@ const Navbar = () => {
   const router = useRouter();
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  console.log("hi data from redux store: ", user, isAuthenticated, token);
+  // console.log("hi data from redux store: ", user, isAuthenticated, token);
 
   const handleSignout = (e) => {
     e.preventDefault();
