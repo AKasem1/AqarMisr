@@ -48,7 +48,7 @@ const AddProperty = () => {
                 <div className="flex-1">
                     <BasicInfo />
                 </div>
-                {/* <div className="w-64 border-l bg-background" dir='rtl'>
+                <div className="w-64 border-l bg-background" dir='rtl'>
                     <div className="space-y-4 py-4">
                         <div className="px-3 py-2">
                             <div className="space-y-1">
@@ -69,7 +69,7 @@ const AddProperty = () => {
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
             </div>
         </>
     );
