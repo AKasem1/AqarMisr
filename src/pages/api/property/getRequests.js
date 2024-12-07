@@ -3,9 +3,6 @@ import mongoose from "mongoose";
 
 
 const handler = async (req, res) => {
-  // console.log(`Incoming request: ${req.method} ${req.url}`);
-  // console.log('Headers:', req.headers);
-  // console.log('Body:', req.body);
 
   try {
     if (req.method === "GET") {
@@ -23,9 +20,7 @@ const handler = async (req, res) => {
   } catch (error) {
     console.error(error.message);
     res.status(400).json({ message: error.message });
-  } finally {
-    await mongoose.disconnect();
-  }
+  } 
 };
 
 export default handler;

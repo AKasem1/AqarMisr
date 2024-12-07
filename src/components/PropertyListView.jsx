@@ -10,14 +10,15 @@ import {
 import axios from "axios";
 
 const PropertyListView = () => {
-  let properties = useState({})
+  const [properties, setProperties] = useState([]);
 
   useEffect(() => {
     const getProperties = async () => {
-      properties = await axios
+      const response = await axios
         .get("/api/property/getRequests/")
         .then((data) => data.data.data)
         .catch((err) => console.log(err));
+      setProperties(response);
       console.log(properties);
     };
     getProperties();
@@ -31,10 +32,18 @@ const PropertyListView = () => {
         loop: true,
       }}>
       <CarouselContent className="-ml-4">
-        {properties.map((property) => {
+        {properties && properties.map((property) => {
           return (
             <CarouselItem className="pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-              <PropertyCard key={property._id} propAttributes={{}}/>
+              <PropertyCard
+                key={property._id}
+                propName={property.propertyName}
+                propImage={property.propertyImage}
+                propLocation={property.location}
+                propAttributes={property.attributes}
+                propOwnerPhone={property.addedBy.phone}
+                propOwnerWhatsApp={property.addedBy.whatsapp}
+              />
             </CarouselItem>
           );
         })}

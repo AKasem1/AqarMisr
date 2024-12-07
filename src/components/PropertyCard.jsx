@@ -5,11 +5,10 @@ import Link from "next/link";
 const PropertyCard = (props) => {
   return (
     <Link href={"/property/example1"} className="min-w-64 rounded-lg border">
-      
       {/* Property Image + Name*/}
       <img
         className="rounded-t-lg"
-        src={props.propImage}
+        src={props.propImage || "/property_1_image.png"}
         alt="Property Image"
       />
       <div className="px-4 py-2 flex flex-col gap-2">
@@ -47,20 +46,26 @@ const PropertyCard = (props) => {
         </div>
 
         {/* Property Owner's Whatsapp */}
-        <div className="flex items-center justify-center gap-4">
-          <img
-            className="size-4"
-            src="whatsapp_icon.svg"
-            alt="Owner's Whatsapp icon"
-          />
-          <p className="text-slate-600">{props.propOwnerWhatsApp}</p>
-        </div>
+        {props.propOwnerWhatsApp && (
+          <div className="flex items-center justify-center gap-4">
+            <img
+              className="size-4"
+              src="whatsapp_icon.svg"
+              alt="Owner's Whatsapp icon"
+            />
+            <p className="text-slate-600">{props.propOwnerWhatsApp}</p>
+          </div>
+        )}
       </div>
 
       <hr />
 
       <div className="flex justify-center py-1">
-        <Link href={"/property/example1"} className="text-sky-600 font-semibold hover:text-sky-800">رؤية المزيد</Link>
+        <Link
+          href={"/property/example1"}
+          className="text-sky-600 font-semibold hover:text-sky-800">
+          رؤية المزيد
+        </Link>
       </div>
     </Link>
   );

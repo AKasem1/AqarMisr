@@ -11,7 +11,7 @@ import AddProjects from '@/components/dashboard/addProjects';
 
 
 const Dashboard = () => {
-    const [selectedSteps, setSelectedSteps] = useState(2);
+    const [selectedSteps, setSelectedSteps] = useState(1);
 
     const sidebarItems = [
         {
