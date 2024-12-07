@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Home, MapPin, Image, Video, User } from "lucide-react";
+import { Home, MapPin, Image, Video, User, Building } from "lucide-react";
 import BasicInfo from '@/components/AddProperty/BasicInfo';
 import Head from 'next/head';
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/UI/button";
 import PropertyRequest from '@/components/dashboard/propertyRequests';
 import AddAdmin from '@/components/dashboard/addAdmin';
+import AddArticle from '@/components/dashboard/addArticle';
+import AddProjects from '@/components/dashboard/addProjects';
 
 
 const Dashboard = () => {
@@ -20,19 +22,21 @@ const Dashboard = () => {
         },
         {
             id: 2,
-            icon: MapPin,
-            label: "إضافة مشاريع"
+            icon: Building,
+            label: "إضافة مشاريع",
+            component: <AddProjects />
         },
         {
             id: 3,
-            icon: Image,
+            icon: User,
             label: "إضافة أدمن",
             component: <AddAdmin />
         },
         {
             id: 4,
-            icon: User,
-            label: "المستخدمين"
+            icon: Image,
+            label: "إضافة مقال",
+            component: <AddArticle />
         }
     ];
 

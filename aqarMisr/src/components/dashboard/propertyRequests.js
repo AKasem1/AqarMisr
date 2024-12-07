@@ -20,8 +20,8 @@ const PropertyRequest = () => {
           throw new Error(`Http error occured in propertyRequests.js, status: ${response.status}`);
         }
         const data = await response.data;
-        console.log(data)
-        setRequests(data);
+        console.log("Requests: ", data)
+        setRequests(data.requests || []);
       } catch (error) {
         console.error("Error fetching property requests:", error);
       }
@@ -46,7 +46,7 @@ const PropertyRequest = () => {
       });
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       if (!response.ok) {
         Swal.fire(data.message, '', 'error')
         throw new Error(data.message || "Something went wrong!");
@@ -69,7 +69,7 @@ const PropertyRequest = () => {
       });
 
       const data = await response.json();
-      console.log(data);
+      // console.log(data);
       if (!response.ok) {
         Swal.fire(data.message, '', 'error')
         throw new Error(data.message || "Something went wrong!");
@@ -102,7 +102,7 @@ const PropertyRequest = () => {
             </tr>
           </thead>
           <tbody>
-            {requests.map((request) => (
+            {requests? requests.map((request) => (
               <tr key={request._id} className="border-b hover:bg-gray-50 transition-colors">
                 <td className="px-4 py-3">
                   <button
@@ -138,7 +138,7 @@ const PropertyRequest = () => {
                 <td className="px-4 py-3">{request.addedBy?.phone}</td>
                 <td className="px-4 py-3">{request.addedBy?.fullName}</td>
               </tr>
-            ))}
+            )) : null}
           </tbody>
         </table>
       </div>

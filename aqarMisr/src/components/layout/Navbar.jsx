@@ -1,14 +1,15 @@
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
-import { Rubik } from "@next/font/google";
+// import { Rubik } from "@next/font/google";
 import { logout } from "@/redux/slices/authSlice";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-const rubik = Rubik({
-  subsets: ["latin", "arabic"],
-  weight: ["400", "500", "700"],
-});
+// const rubik = Rubik({
+//   subsets: ["latin", "arabic"],
+//   weight: ["400", "500", "700"],
+//   display: 'swap',
+// });
 
 const Navbar = () => {
   const user = useSelector((state) => state.auth.user);
@@ -48,12 +49,12 @@ const Navbar = () => {
         <Link
           className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
           href="/">
-          أحدث المشاريع
+           أحدث المشاريع 
         </Link>
         <Link
           className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
           href="/about">
-          عن عقار مصر
+           عن عقار مصر 
         </Link>
         <Link
           className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
