@@ -52,11 +52,11 @@ export default function AddProjects() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
-      <div className="container mx-auto max-w-md px-4">
+    <div className="my-4">
+      <div className="mx-auto max-w-md px-4">
         <motion.div
           className="rounded-xl bg-white p-6 shadow-lg"
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
@@ -77,7 +77,7 @@ export default function AddProjects() {
                   placeholder="أدخل اسم المشروع"
                 />
                 <FileText 
-                lassName="mr-6 text-gray-400" />
+                className="mr-6 text-gray-400" />
               </div>
             </div>
 
@@ -90,7 +90,6 @@ export default function AddProjects() {
                 type="file"
                 onChange={handleImageUpload}
                 />
-                {/* <Image className="mr-6 text-gray-400" /> */}
               </div>
             </div>
 
@@ -107,8 +106,6 @@ export default function AddProjects() {
                   }
                   placeholder="أدخل وصف المشروع"
                 />
-                {/* <FileText 
-                lassName="mr-6 text-gray-400" /> */}
               </div>
             </div>
             
@@ -125,8 +122,6 @@ export default function AddProjects() {
                   }
                   placeholder="أدخل عنوان المشروع"
                 />
-                {/* <FileText 
-                lassName="mr-6 text-gray-400" /> */}
               </div>
             </div>
             
@@ -143,8 +138,6 @@ export default function AddProjects() {
                   }
                   placeholder="أدخل عدد العقارات المتاحة"
                 />
-                {/* <FileText 
-                lassName="mr-6 text-gray-400" /> */}
               </div>
             </div>
             

@@ -10,7 +10,7 @@ const handler = async (req, res) => {
   try {
     if (req.method === "GET") {
       await mongoose.connect(process.env.MONGO_URL);
-      // console.log("Connected to MongoDB");
+      console.log("Connected to MongoDB");
 
       const properties = await Property.find({"accepted": "accepted"})
         .populate("addedBy", "fullName phone")

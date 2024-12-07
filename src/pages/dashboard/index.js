@@ -11,7 +11,7 @@ import AddProjects from '@/components/dashboard/addProjects';
 
 
 const Dashboard = () => {
-    const [selectedSteps, setSelectedSteps] = useState(1);
+    const [selectedSteps, setSelectedSteps] = useState(2);
 
     const sidebarItems = [
         {
@@ -46,11 +46,13 @@ const Dashboard = () => {
                 <title>Aqar Misr | إضافة عقار</title>
                 <meta name="description" content="إضافة عقار" />
             </Head>
-            <div className="flex h-screen">
+            <div className="flex min-h-screen">
                 {/* Main content area */}
-                <div className="flex-1">
+                <div className="flex-grow">
                     {sidebarItems.find(item => item.id === selectedSteps)?.component}
                 </div>
+
+                {/*The sidebar itself */}
                 <div className="w-64 border-l bg-background" dir='rtl'>
                     <div className="space-y-4 py-4">
                         <div className="px-3 py-2">

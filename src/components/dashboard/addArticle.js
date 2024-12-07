@@ -50,8 +50,8 @@ export default function AddArticle() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-12">
-      <div className="container mx-auto max-w-md px-4">
+    <div className="my-4">
+      <div className="mx-auto max-w-md px-4">
         <motion.div
           className="rounded-xl bg-white p-6 shadow-lg"
           initial={{ opacity: 0, y: -20 }}

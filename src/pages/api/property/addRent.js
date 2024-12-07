@@ -5,6 +5,7 @@ const handler = async (req, res) => {
     try {
       if(req.method === 'POST'){
         const client = await MongoClient.connect(process.env.MONGO_URL);
+        console.log(process.env.MONGO_URL)
         const db = client.db();
         const propertiesCollection = db.collection('properties');
         const userCollection = db.collection('users')

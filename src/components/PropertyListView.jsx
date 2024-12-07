@@ -16,7 +16,8 @@ const PropertyListView = () => {
     const getProperties = async () => {
       properties = await axios
         .get("/api/property/getRequests/")
-        .then((data) => data.data.data);
+        .then((data) => data.data.data)
+        .catch((err) => console.log(err));
       console.log(properties);
     };
     getProperties();

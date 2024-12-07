@@ -13,15 +13,14 @@ const PropertyRequest = () => {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const response = await fetch("/api/property/getRequests");
+        const response = await axios.get("/api/property/getRequests").catch(error => console.log(error));
 
-        if (response.status != 200) {
+        if (response && (response?.status == 200)) {
           console.log(response)
-          throw new Error(`Http error occured in propertyRequests.js, status: ${response.status}`);
-        }
-        const data = await response.data;
-        console.log("Requests: ", data)
-        setRequests(data.requests || []);
+          const data = await response.data;
+          console.log("Requests: ", data)
+          setRequests(data.data || []);
+        } 
       } catch (error) {
         console.error("Error fetching property requests:", error);
       }
@@ -82,7 +81,7 @@ const PropertyRequest = () => {
   }
 
   return (
-    <div className="space-y-6 rtl px-6 py-4">
+    <div className="space-y-6 rtl px-6 py-4 my-4">
       <div className="overflow-x-auto bg-white rounded-xl">
         <table className="min-w-full text-right table-auto border-collapse">
           <thead>
