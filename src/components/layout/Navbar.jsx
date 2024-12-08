@@ -43,7 +43,7 @@ const Navbar = () => {
         </Link>
         <Link
           className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
-          href="/">
+          href="/property/all">
           عقاراتنا
         </Link>
         <Link
@@ -63,7 +63,7 @@ const Navbar = () => {
         </Link>
         <Link
           className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
-          href="/">
+          href="/contact">
           تواصل معنا
         </Link>
       </div>
