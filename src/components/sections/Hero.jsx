@@ -12,7 +12,7 @@ import Link from "next/link";
  */
 const Hero = () => {
   return (
-    <div className='h-[calc(100vh-112px)] bg-[url("/hero_bg.png")] flex flex-col p-6 space-y-8 items-center bg-no-repeat bg-contain bg-center text-teal-900'>
+    <div className='h-[calc(100vh-110px)] bg-[url("/hero_bg.png")] flex flex-col p-6 space-y-8 items-center bg-no-repeat bg-cover bg-left-bottom text-teal-900'>
         <p className="border border-black px-6 py-2 rounded-full">أحدث المشاريع</p>
         
         <p className="text-center">موقع عقار مصر يعرض كل ماهو جديد في عالم العقارات في مصر بشكل عام والعاصمة الادارية بشكل خاص</p>
