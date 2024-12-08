@@ -21,6 +21,10 @@ body {
   font-family: "IBM Plex Sans Arabic", sans-serif;
 }
 
+.responsive-grid {
+  @apply grid grid-cols-[repeat(auto-fit,minmax(200px,300px))] gap-10 ;
+}
+
 @layer base {
   :root {
     --radius: 0.5rem;

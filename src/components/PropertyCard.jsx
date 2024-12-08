@@ -1,10 +1,12 @@
 import React from "react";
 import PropertyAttribute from "./PropertyAttribute";
 import Link from "next/link";
+import { MapPin, Phone, PhoneIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const PropertyCard = (props) => {
   return (
-    <Link href={"/property/example1"} className="min-w-64 rounded-lg border">
+    <Link href={"/property/example1"} className={cn("min-w-64 rounded-lg border", props.className)}>
       {/* Property Image + Name*/}
       <img
         className="rounded-t-lg"
@@ -16,7 +18,7 @@ const PropertyCard = (props) => {
 
         {/* Property Location */}
         <div className="flex flex-row-reverse items-center">
-          <img className="size-4" src="location_icon.svg" />
+          <MapPin className="p-1" />
           <h2>{props.propLocation}</h2>
         </div>
 
@@ -37,11 +39,7 @@ const PropertyCard = (props) => {
 
         {/* Property Owner's Phone number */}
         <div className="flex items-center justify-center gap-4">
-          <img
-            className="size-4"
-            src="owner_phone_icon.svg"
-            alt="Owner's phone icon"
-          />
+          <Phone className="p-1"/>
           <p className="text-slate-600">{props.propOwnerPhone}</p>
         </div>
 
