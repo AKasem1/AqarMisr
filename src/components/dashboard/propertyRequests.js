@@ -6,7 +6,7 @@ import axios from "axios";
 const PropertyRequest = () => {
   const [showDetails, setShowDetails] = useState(false);
   const [accept, setAccept] = useState(false);
-  const [requests, setRequests] =useState([])
+  const [requests, setRequests] = useState([])
   const [selectedRequest, setSelectedRequst] = useState({})
   const router = useRouter();
 
@@ -20,7 +20,7 @@ const PropertyRequest = () => {
           const data = await response.data;
           console.log("Requests: ", data)
           setRequests(data.data || []);
-        } 
+        }
       } catch (error) {
         console.error("Error fetching property requests:", error);
       }
@@ -38,7 +38,7 @@ const PropertyRequest = () => {
     try {
       const response = await fetch("/api/property/handleRequest", {
         method: "POST",
-        body: JSON.stringify({accept: true, id}),
+        body: JSON.stringify({ accept: true, id }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -61,7 +61,7 @@ const PropertyRequest = () => {
     try {
       const response = await fetch("/api/property/handleRequest", {
         method: "POST",
-        body: JSON.stringify({accept, id}),
+        body: JSON.stringify({ accept, id }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -101,7 +101,7 @@ const PropertyRequest = () => {
             </tr>
           </thead>
           <tbody>
-            {requests? requests.map((request) => (
+            {requests ? requests.map((request) => (
               <tr key={request._id} className="border-b hover:bg-gray-50 transition-colors">
                 <td className="px-4 py-3">
                   <button
@@ -145,86 +145,87 @@ const PropertyRequest = () => {
 
       {/* Modal for Property Details */}
       {showDetails && (
-  <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-  <div className="bg-white rounded-lg shadow-lg w-[90%] max-w-lg p-6 relative">
-    <h2 className="text-xl font-bold text-teal-600 border-b pb-3 mb-4 text-center">
-      تفاصيل العقار
-    </h2>
-    <table className="w-full border-collapse text-sm" dir="rtl">
-      <tbody>
-       
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">الموقع</td>
-          <td className="py-2 px-4 text-gray-600">{selectedRequest.location}</td>
-        </tr>
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">نوع العقد</td>
-          <td className="py-2 px-4 text-gray-600">{selectedRequest.contractType}</td>
-        </tr>
-        {/* Additional Features */}
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">مطبخ</td>
-          <td className="py-2 px-4 text-gray-600">
-            {selectedRequest.hasKitchen ? "نعم" : "لا"}
-          </td>
-        </tr>
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">حديقة</td>
-          <td className="py-2 px-4 text-gray-600">
-            {selectedRequest.hasGarden ? "نعم" : "لا"}
-          </td>
-        </tr>
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">مصعد</td>
-          <td className="py-2 px-4 text-gray-600">
-            {selectedRequest.hasElevator ? "نعم" : "لا"}
-          </td>
-        </tr>
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">كاميرات</td>
-          <td className="py-2 px-4 text-gray-600">
-            {selectedRequest.hasCameras ? "نعم" : "لا"}
-          </td>
-        </tr>
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">عدادات</td>
-          <td className="py-2 px-4 text-gray-600">
-            {selectedRequest.hasMeters ? "نعم" : "لا"}
-          </td>
-        </tr>
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">تدفئة</td>
-          <td className="py-2 px-4 text-gray-600">
-            {selectedRequest.hasHeating ? "نعم" : "لا"}
-          </td>
-        </tr>
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">مكيف هواء</td>
-          <td className="py-2 px-4 text-gray-600">
-            {selectedRequest.hasAC ? "نعم" : "لا"}
-          </td>
-        </tr>
-        <tr className="border-b">
-          <td className="py-2 px-4 font-semibold text-gray-700">مفروش</td>
-          <td className="py-2 px-4 text-gray-600">
-            {selectedRequest.isFurnished ? "نعم" : "لا"}
-          </td>
-        </tr>
-      </tbody>
-    </table>
+        <div className="fixed -top-10 right-0 bottom-0 w-full bg-black bg-opacity-50 flex justify-center items-center">
+          <div className="bg-white rounded-lg shadow-lg w-[90%] max-w-lg p-6 relative">
+            <h2 className="text-xl font-bold text-teal-600 border-b pb-3 text-center">
+              تفاصيل العقار
+            </h2>
+            <table className="w-full border-collapse text-sm" dir="rtl">
+              <tbody>
 
-    <div className="flex justify-end mt-6">
-      <button
-        onClick={toggleDetails}
-        className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition-colors"
-      >
-        إغلاق
-      </button>
-    </div>
-  </div>
-</div>
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">الموقع</td>
+                  <td className="py-2 px-4 text-gray-600">{selectedRequest.location}</td>
+                </tr>
 
-)}
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">نوع العقد</td>
+                  <td className="py-2 px-4 text-gray-600">{selectedRequest.contractType}</td>
+                </tr>
+
+                {/* Additional Features */}
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">مطبخ</td>
+                  <td className="py-2 px-4 text-gray-600">
+                    {selectedRequest.hasKitchen ? "نعم" : "لا"}
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">حديقة</td>
+                  <td className="py-2 px-4 text-gray-600">
+                    {selectedRequest.hasGarden ? "نعم" : "لا"}
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">مصعد</td>
+                  <td className="py-2 px-4 text-gray-600">
+                    {selectedRequest.hasElevator ? "نعم" : "لا"}
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">كاميرات</td>
+                  <td className="py-2 px-4 text-gray-600">
+                    {selectedRequest.hasCameras ? "نعم" : "لا"}
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">عدادات</td>
+                  <td className="py-2 px-4 text-gray-600">
+                    {selectedRequest.hasMeters ? "نعم" : "لا"}
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">تدفئة</td>
+                  <td className="py-2 px-4 text-gray-600">
+                    {selectedRequest.hasHeating ? "نعم" : "لا"}
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">مكيف هواء</td>
+                  <td className="py-2 px-4 text-gray-600">
+                    {selectedRequest.hasAC ? "نعم" : "لا"}
+                  </td>
+                </tr>
+                <tr className="border-b">
+                  <td className="py-2 px-4 font-semibold text-gray-700">مفروش</td>
+                  <td className="py-2 px-4 text-gray-600">
+                    {selectedRequest.isFurnished ? "نعم" : "لا"}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div className="flex justify-end mt-6">
+              <button
+                onClick={toggleDetails}
+                className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition-colors"
+              >
+                إغلاق
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
