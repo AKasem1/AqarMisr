@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 const PropertyCard = (props) => {
   return (
-    <Link href={"/property/example1"} className={cn("min-w-64 rounded-lg border", props.className)}>
+    <Link href={"/property/example1"}>
       {/* Property Image + Name*/}
       <img
         className="rounded-t-lg"

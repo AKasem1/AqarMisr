@@ -14,7 +14,7 @@ const Steps = () => {
     <div className="p-6 text-center md:p-32">
       <h1 className="text-3xl font-bold">كيف تستفيد من موقعنا</h1>
 
-      <p className="text-slate-500">Lorem ipsum dolor sit amet.</p>
+      <p className="text-slate-500">خطوات سهلة للاستفادة من جميع الميزات</p>
 
       <div className="grid grid-cols-1 gap-10 mt-12 md:grid-cols-3">
         <div className="space-y-6">
@@ -23,8 +23,7 @@ const Steps = () => {
             اختر عقارك الأنسب في أقل من شهر
           </h1>
           <p className="text-slate-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
-            repellendus?
+          عملية سهلة وسريعة للعثور على منزلك المثالي
           </p>
         </div>
 
@@ -34,8 +33,7 @@ const Steps = () => {
             قم بزيارة للعقار مع واحد من وكلائنا
           </h1>
           <p className="text-slate-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
-            repellendus?
+          حدد موعدك اليوم لزيارة العقار
           </p>
         </div>
 
@@ -45,8 +43,7 @@ const Steps = () => {
             ابحث عن العقار المفضل فى موقعك
           </h1>
           <p className="text-slate-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus,
-            repellendus?
+          استخدم الفلاتر للعثور على عقارك المثالي
           </p>
         </div>
 

@@ -22,9 +22,9 @@ export default function Home() {
       <main>
         <Hero/>
         <Stats/>
-        <Steps/>
-        <Categories/>
         <Properties/>
+        <Categories/>
+        <Steps/>
         <AboutUs/>
         <Newsletter/>
       </main>
