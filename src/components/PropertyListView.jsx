@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import axios from "axios";
+import { data } from "react-router-dom";
 
 const PropertyListView = () => {
   const [properties, setProperties] = useState([]);
@@ -15,11 +16,11 @@ const PropertyListView = () => {
   useEffect(() => {
     const getProperties = async () => {
       const response = await axios
-        .get("/api/property/getRequests/")
+        .get("/api/property/getRequests")
         .then((data) => data.data.data)
         .catch((err) => console.log(err));
       setProperties(response);
-      console.log(properties);
+      console.log(response);
     };
     getProperties();
   }, []);

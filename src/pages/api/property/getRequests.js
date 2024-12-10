@@ -9,7 +9,7 @@ const handler = async (req, res) => {
       await mongoose.connect(process.env.MONGO_URL);
       console.log("Connected to MongoDB");
 
-      const properties = await Property.find({"accepted": "accepted"})
+      const properties = await Property.find({"accepted": "pending"})
         .populate("addedBy", "fullName phone")
         .exec();
       // console.log("Properties Requests: ", properties)
