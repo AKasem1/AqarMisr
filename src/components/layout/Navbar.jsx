@@ -58,7 +58,7 @@ const Navbar = () => {
         </Link>
         <Link
           className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
-          href="/">
+          href="/articles">
           المدونة
         </Link>
         <Link

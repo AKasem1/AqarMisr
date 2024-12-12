@@ -32,7 +32,7 @@ const index = () => {
                     رجوع للصفحة الرئيسية
                 </Link>
                 <h1 className="w-full text-center text-3xl font-semibold text-nowrap">
-                    أحدث المشاريع
+                    عقاراتنا
                 </h1>
             </div>
             <div className='p-6 min-h-screen responsive-grid place-items-center justify-center'>
