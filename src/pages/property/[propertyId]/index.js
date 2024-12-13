@@ -48,9 +48,9 @@ const index = ({ props }) => {
                 <meta name="description" content="" />
             </Head>
             <div className='m-6 p-10 bg-gray-50 rounded-lg shadow-lg'>
-                <div className='flex justify-between gap-10'>
+                <div className='grid grid-cols-1 md:grid-cols-2 justify-between gap-10'>
                     {/* Property Image Carousel (carousel not implemented yet) */}
-                    <Image className='rounded-lg max-h-[500px]' src={property.propertyImages[0]} alt={property.propertyName} width={500} height={500} loading='eager' />
+                    <Image className='rounded-lg max-h-[500px] w-full aspect-square object-contain' src={property.propertyImages[0]} alt={property.propertyName} width={500} height={500} loading='eager' />
 
                     {/* Property Details plus buy/rent button*/}
                     <div dir='rtl' className='space-y-5'>
@@ -60,7 +60,7 @@ const index = ({ props }) => {
                         <h1 className='text-3xl'>{property.propertyName}</h1>
 
                         <p className='text-green-500'>يبدا من{property.currentPrice} ج</p>
-                        <div className='flex items-center gap-4'>
+                        <div className='flex items-center flex-wrap gap-4'>
                             <div className='flex items-center gap-2'>
                                 <Bed className='py-px text-gray-600' />
                                 <p className='text-gray-600'>{property.rooms} غرف</p>

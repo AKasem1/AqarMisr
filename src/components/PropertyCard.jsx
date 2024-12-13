@@ -2,7 +2,6 @@ import React from "react";
 import PropertyAttribute from "./PropertyAttribute";
 import Link from "next/link";
 import { MapPin, Phone, PhoneIcon } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const PropertyCard = (props) => {
   return (
