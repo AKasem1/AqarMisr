@@ -43,11 +43,12 @@ const AddProperty = () => {
                 <title>Aqar Misr | إضافة عقار</title>
                 <meta name="description" content="إضافة عقار" />
             </Head>
-            <div className="flex h-screen">
+            <div className="flex min-h-screen">
                 {/* Main content area */}
                 <div className="flex-1">
                     <BasicInfo />
                 </div>
+
                 <div className="w-64 border-l bg-background" dir='rtl'>
                     <div className="space-y-4 py-4">
                         <div className="px-3 py-2">

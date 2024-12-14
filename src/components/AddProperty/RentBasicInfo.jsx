@@ -35,7 +35,6 @@ const RentBasicInfo = (type) => {
 
   useEffect(() => {
     contractType = type.type;
-    // console.log("type: ", type.type)
   }, [type]);
 
   const [formState, setFormState] = useState({
@@ -190,7 +189,7 @@ const RentBasicInfo = (type) => {
           value={formState.city}
           onChange={(e) => handleInputChange('city', e.target.value)}
           errorMsg={errors.city ? 'Please provide the property city' : ''}
-          labelIcon={<MapPinned  className="size-4" />}
+          labelIcon={<MapPinned className="size-4"/>}
         />
       </div>
       <div className="space-y-2 w-2/4">

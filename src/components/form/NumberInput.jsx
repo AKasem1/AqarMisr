@@ -12,6 +12,8 @@ const NumberInput = ({
   value,
   dir,
   className,
+  min,
+  max,
 }) => {
   return (
     <div dir={dir}>
@@ -23,6 +25,8 @@ const NumberInput = ({
       <input
         className={cn("w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-teal-900 focus:bg-teal-50", className)}
         type="number"
+        min={min || 0}
+        max={max}
         placeholder={placeholder}
         required={isRequired}
         onChange={onChange}
