@@ -30,9 +30,9 @@ const Navbar = () => {
   return (
     <nav className="w-full bg-white text-teal-900 text-nowrap h-28 flex justify-between items-center px-6 resize-none">
       {/* Aqar Masr Logo */}
-      <div>
+      <Link href={"/"}>
         <img className="max-w-16 min-w-16" src="/aqar_logo.png" alt="aqar misr logo" />
-      </div>
+      </Link>
 
       {/* Links to diff pages */}
       <div dir="rtl" className="text-lg font-Rubik hidden lg:block">
@@ -45,11 +45,6 @@ const Navbar = () => {
           className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
           href="/property/all">
           عقاراتنا
-        </Link>
-        <Link
-          className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
-          href="/">
-           أحدث المشاريع 
         </Link>
         <Link
           className="px-4 py-2 hover:bg-gray-100 rounded-full transition"
