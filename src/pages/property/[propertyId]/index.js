@@ -210,6 +210,7 @@ export async function getStaticProps(context) {
       propertyName: property.propertyName,
       propertyType: property.propertyType,
       propertyImage: property.image,
+      propertyDescription: property.propertyDescription,
       addedBy: property.addedBy?.toString() || null,
       city: property.city,
       contractType: property.contractType,

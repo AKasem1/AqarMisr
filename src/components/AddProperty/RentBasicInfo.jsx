@@ -26,6 +26,7 @@ import {
   MapPinHouse,
   MapPinned 
 } from 'lucide-react';
+import ExpandingTextarea from '@/components/form/ExpandingTextarea';
 
 const RentBasicInfo = (type) => {
   const router = useRouter();
@@ -40,6 +41,7 @@ const RentBasicInfo = (type) => {
   const [formState, setFormState] = useState({
     propertyName: '',
     propertyType: '',
+    propertyDescription: '',
     image: '',
     currentPrice: '',
     propertyArea: '',
@@ -231,6 +233,15 @@ const RentBasicInfo = (type) => {
           labelIcon={<Bed className="size-4" />}
         />
       </div>
+
+      <h2 className="text-xl text-center font-bold">الوصف</h2>
+      <ExpandingTextarea
+        label=" الوصف العام للعقار"
+        placeholder="الوصف العام"
+        isRequired={true}
+        value={formState.propertyDescription}
+        onChange={(e) => handleInputChange('propertyDescription', e.target.value)}
+        labelIcon={<Building className="size-4" />}/>
 
       <h2 className="text-xl text-center font-bold mb-4">مميزات العقار</h2>
       <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-10">
