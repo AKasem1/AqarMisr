@@ -193,7 +193,7 @@ const RentBasicInfo = (type) => {
         />
       </div>
       <div className="space-y-2 w-2/4">
-        <label htmlFor="file_input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">رفع صورة المقال</label>
+        <label htmlFor="file_input" className="block mb-2 text-md font-semibold text-gray-900 dark:text-white"> صورة العقار</label>
         <div className="flex border p-2 rounded-xl items-center">
           <input 
           className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
@@ -201,7 +201,7 @@ const RentBasicInfo = (type) => {
           type="file"
           onChange={handleImageUpload}
           />
-          <Image className="mr-6 text-gray-400" />
+          <Image className="mr-2 p-px text-gray-400" />
         </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
