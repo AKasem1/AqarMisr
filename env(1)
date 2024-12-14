@@ -1,3 +1,0 @@
-MONGO_URL = mongodb+srv://abdelrahmankasem7:8bmr6su4@cluster0.ly71v.mongodb.net/AQAR-MISR
-SECRET = akasemsecretkey
-NEXT_PUBLIC_IMG_UPLOAD_KEY = 7018fb9a5ef8f5cc54c418520930ecfe
