@@ -4,11 +4,13 @@ import CheckBox from '@/components/form/CheckBox';
 import Select from '@/components/form/Select';
 import NumberInput from '@/components/form/NumberInput';
 import Swal from 'sweetalert2'
+import imgUpload from "@/pages/util/imgUpload";
 import { useRouter } from 'next/router';
 import { useSelector } from "react-redux";
 import {
   Building,
   Banknote,
+  Image,
   Bath,
   Bed,
   Square,
@@ -39,6 +41,7 @@ const RentBasicInfo = (type) => {
   const [formState, setFormState] = useState({
     propertyName: '',
     propertyType: '',
+    image: '',
     currentPrice: '',
     propertyArea: '',
     bathrooms: 0,
@@ -93,6 +96,14 @@ const RentBasicInfo = (type) => {
 
     setErrors(newErrors);
     return Object.values(newErrors).every((error) => !error);
+  };
+
+  const handleImageUpload = async (e) => {
+    const image = e.target.files[0];
+    if (image) {
+      const imageUrl = await imgUpload(image);
+      setFormState({ ...formState, image: imageUrl });
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -181,6 +192,18 @@ const RentBasicInfo = (type) => {
           errorMsg={errors.city ? 'Please provide the property city' : ''}
           labelIcon={<MapPinned  className="size-4" />}
         />
+      </div>
+      <div className="space-y-2 w-2/4">
+        <label htmlFor="file_input" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">رفع صورة المقال</label>
+        <div className="flex border p-2 rounded-xl items-center">
+          <input 
+          className="flex h-9 w-full rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-foreground file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
+          id="file_input"
+          type="file"
+          onChange={handleImageUpload}
+          />
+          <Image className="mr-6 text-gray-400" />
+        </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
         <NumberInput

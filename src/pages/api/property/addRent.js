@@ -14,6 +14,7 @@ const handler = async (req, res) => {
             propertyName,
             propertyType,
             currentPrice,
+            image,
             propertyArea,
             bathrooms,
             rooms,
@@ -32,7 +33,7 @@ const handler = async (req, res) => {
         } = req.body
         
 
-        if (!propertyName || !propertyType || !currentPrice || !propertyArea || !bathrooms || !rooms || !location || !city) {
+        if (!propertyName || !propertyType || !image || !currentPrice || !propertyArea || !bathrooms || !rooms || !location || !city) {
             throw Error('يجب ملئ جميع البيانات');
           }
 
@@ -50,6 +51,7 @@ const handler = async (req, res) => {
         const property = await propertiesCollection.insertOne({
             propertyName,
             propertyType,
+            image,
             currentPrice,
             propertyArea,
             bathrooms,
