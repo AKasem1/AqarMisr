@@ -61,7 +61,7 @@ const index = ({property}) => {
             <div className='m-6 p-10 bg-gray-50 rounded-lg shadow-lg'>
                 <div className='flex justify-between gap-10'>
                     {/* Property Image Carousel (carousel not implemented yet) */}
-                    {/* <Image className='rounded-lg max-h-[500px]' src={property.propertyImages[0]} alt={property.propertyName} width={500} height={500} loading='eager' /> */}
+                    <Image className='rounded-lg max-h-[500px]' src={property.propertyImage || "https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"} alt={property.propertyName} width={500} height={500} loading='eager' />
 
                     {/* Property Details plus buy/rent button*/}
                     <div dir='rtl' className='space-y-5'>
@@ -95,6 +95,7 @@ const index = ({property}) => {
                         <hr />
 
                         {/* Property Features */}
+                        {console.log(property)}
                         <h1 className='text-2xl'>مميزات العقار</h1>
                         <div className='grid grid-cols-3 gap-4'>
                             {property.features.hasKitchen &&
@@ -208,6 +209,7 @@ export async function getStaticProps(context) {
       id: property._id.toString(),
       propertyName: property.propertyName,
       propertyType: property.propertyType,
+      propertyImage: property.image,
       addedBy: property.addedBy?.toString() || null,
       city: property.city,
       contractType: property.contractType,
@@ -217,14 +219,14 @@ export async function getStaticProps(context) {
       rooms: property.rooms,
       bathrooms: property.bathrooms,
       features: {
-        hasKitchen: property.features?.hasKitchen || false,
-        hasGarden: property.features?.hasGarden || false,
-        hasElevator: property.features?.hasElevator || false,
-        hasCameras: property.features?.hasCameras || false,
-        hasMeters: property.features?.hasMeters || false,
-        hasHeating: property.features?.hasHeating || false,
-        hasAC: property.features?.hasAC || false,
-        isFurnished: property.features?.isFurnished || false,
+        hasKitchen: property.hasKitchen || false,
+        hasGarden: property.hasGarden || false,
+        hasElevator: property.hasElevator || false,
+        hasCameras: property.hasCameras || false,
+        hasMeters: property.hasMeters || false,
+        hasHeating: property.hasHeating || false,
+        hasAC: property.hasAC || false,
+        isFurnished: property.isFurnished || false,
       },
       accepted: property.accepted || "pending",
       createdAt: property.createdAt?.toISOString() || null,

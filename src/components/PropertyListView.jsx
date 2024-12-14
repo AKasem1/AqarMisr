@@ -38,6 +38,7 @@ const PropertyListView = () => {
             <CarouselItem className="pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
               <PropertyCard
                 key={property._id}
+                id={property._id}
                 propName={property.propertyName}
                 propImage={property.propertyImage}
                 propLocation={property.location}

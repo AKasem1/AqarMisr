@@ -5,7 +5,7 @@ import { MapPin, Phone, PhoneIcon } from "lucide-react";
 
 const PropertyCard = (props) => {
   return (
-    <Link href={"/property/example1"}>
+    <Link href={"/property/" + props.id}>
       {/* Property Image + Name*/}
       <img
         className="rounded-t-lg"
@@ -58,11 +58,9 @@ const PropertyCard = (props) => {
       <hr />
 
       <div className="flex justify-center py-1">
-        <Link
-          href={"/property/example1"}
-          className="text-sky-600 font-semibold hover:text-sky-800">
+        <p className="text-sky-600 font-semibold hover:text-sky-800">
           رؤية المزيد
-        </Link>
+        </p>
       </div>
     </Link>
   );
