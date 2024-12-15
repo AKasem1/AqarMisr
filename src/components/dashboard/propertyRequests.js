@@ -2,8 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useRouter } from 'next/router';
 import Swal from 'sweetalert2'
 import axios from "axios";
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { acceptRequest, rejectRequest, setPropertyRequests } from "@/redux/slices/requestSlice";
 
 const PropertyRequest = () => {
+  const dispatch = useDispatch();
+  const propertyRequests = useSelector((state) => state.property.requests);
   const [showDetails, setShowDetails] = useState(false);
   const [accept, setAccept] = useState(false);
   const [requests, setRequests] = useState([])
@@ -20,6 +25,7 @@ const PropertyRequest = () => {
           const data = await response.data;
           console.log("Requests: ", data)
           setRequests(data.data || []);
+          dispatch(setPropertyRequests(data.data || []))
         }
       } catch (error) {
         console.error("Error fetching property requests:", error);
@@ -50,6 +56,7 @@ const PropertyRequest = () => {
         Swal.fire(data.message, '', 'error')
         throw new Error(data.message || "Something went wrong!");
       }
+      dispatch(acceptRequest({ id }));
       Swal.fire('تم قبول طلب العقار بنجاح', '', 'success');
       router.push("/dashboard");
     } catch (error) {
@@ -73,6 +80,7 @@ const PropertyRequest = () => {
         Swal.fire(data.message, '', 'error')
         throw new Error(data.message || "Something went wrong!");
       }
+      dispatch(rejectRequest({ id }));
       Swal.fire('تم رفض طلب العقار بنجاح', '', 'success');
       router.push("/dashboard");
     } catch (error) {
@@ -101,7 +109,7 @@ const PropertyRequest = () => {
             </tr>
           </thead>
           <tbody>
-            {requests ? requests.map((request) => (
+            {propertyRequests ? propertyRequests.map((request) => (
               <tr key={request._id} className="border-b hover:bg-gray-50 transition-colors">
                 <td className="px-4 py-3">
                   <button

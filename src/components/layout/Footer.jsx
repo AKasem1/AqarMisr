@@ -7,7 +7,7 @@ const Footer = () => {
 
       <div className="flex gap-6">
         <a href="/" target="_blank">
-          <img src="/linkedin_icon.svg" alt="Aqar misr Linkedin Icon" />
+          <img className="h-4" src="https://ytpr.co.ke/wp-content/uploads/2020/06/linkedin-icon-png-transparent-background-8.png" alt="Aqar misr Linkedin Icon" />
         </a>
         <a href="/" target="_blank">
           <img src="/instagram_icon.svg" alt="Aqar misr Instagram Icon" />
