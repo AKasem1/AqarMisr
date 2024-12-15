@@ -27,7 +27,7 @@ const index = () => {
             <div className="relative w-full flex items-center mt-10">
                 <Link
                     href="/"
-                    className="absolute left-5 -top-10 sm:-top-0 text-blue-500 inline-flex items-center">
+                    className="absolute left-5 -top-10 sm:-top-0 text-blue-500 inline-flex items-center z-0">
                     <ArrowLeft className="p-1" />
                     رجوع للصفحة الرئيسية
                 </Link>

@@ -112,37 +112,36 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/*Mobile Menu from Hamburger Menu*/}
+      {/*Mobile Menu from Hamburger Menu Miscellaneous*/}
       {isMobileMenuOpen && (
-        <div className="absolute left-0 top-24 bg-gray-100 py-16 flex flex-col w-full items-center gap-4">
+        <div className="absolute left-0 top-24 bg-gray-100 py-16 flex flex-col w-full items-center gap-4 z-50">
           <Link
             href="/"
+            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className="px-4 py-2 hover:bg-gray-100 rounded-full transition">
             الرئيسية
           </Link>
           <Link
-            href="/"
+            href="/property/all"
+            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className="px-4 py-2 hover:bg-gray-100 rounded-full transition">
             عقاراتنا{" "}
           </Link>
           <Link
-            href="/"
-            className="px-4 py-2 hover:bg-gray-100 rounded-full transition">
-            {" "}
-            أحدث المشاريع{" "}
-          </Link>
-          <Link
             href="/about"
+            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className="px-4 py-2 hover:bg-gray-100 rounded-full transition">
             عن عقار مصر{" "}
           </Link>
           <Link
-            href="/"
+            href="/articles"
+            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className="px-4 py-2 hover:bg-gray-100 rounded-full transition">
             المدونة
           </Link>
           <Link
-            href="/"
+            href="/contact"
+            onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className="px-4 py-2 hover:bg-gray-100 rounded-full transition">
             تواصل معنا
           </Link>

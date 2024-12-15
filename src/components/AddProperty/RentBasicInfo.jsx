@@ -135,7 +135,7 @@ const RentBasicInfo = (type) => {
 
   return (
     <form
-      className="border rounded-lg p-24 space-y-5"
+      className="border rounded-lg p-6 lg:p-24 space-y-5"
       dir="rtl"
       onSubmit={handleSubmit}
     >
