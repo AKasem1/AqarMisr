@@ -37,10 +37,10 @@ const PropertyListView = () => {
           return (
             <CarouselItem className="pl-4 sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
               <PropertyCard
-                key={property._id}
+                key={property._id.toString()}
                 id={property._id}
                 propName={property.propertyName}
-                propImage={property.propertyImage}
+                propImage={property.image}
                 propLocation={property.location}
                 propAttributes={property.attributes}
                 propOwnerPhone={property.addedBy.phone}

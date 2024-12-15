@@ -9,7 +9,7 @@ const imgUpload = async (image) => {
   
     try {
       // Send the POST request without `mode: 'no-cors'`
-      const response = await fetch('https://api.imgbb.com/1/upload?expiration=600', {
+      const response = await fetch('https://api.imgbb.com/1/upload', {
         method: 'POST',
         body: formData,
       });

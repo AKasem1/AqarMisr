@@ -2,14 +2,17 @@ import React from "react";
 import PropertyAttribute from "./PropertyAttribute";
 import Link from "next/link";
 import { MapPin, Phone, PhoneIcon } from "lucide-react";
+import Image from "next/image";
 
 const PropertyCard = (props) => {
   return (
     <Link href={"/property/" + props.id}>
       {/* Property Image + Name*/}
-      <img
-        className="rounded-t-lg"
+      <Image
+        width={200}
+        height={200}
         src={props.propImage || "/property_1_image.png"}
+        className="rounded-t-lg"
         alt="Property Image"
       />
       <div className="px-4 py-2 flex flex-col gap-2">
@@ -38,7 +41,7 @@ const PropertyCard = (props) => {
 
         {/* Property Owner's Phone number */}
         <div className="flex items-center justify-center gap-4">
-          <Phone className="p-1"/>
+          <Phone className="p-1" />
           <p className="text-slate-600">{props.propOwnerPhone}</p>
         </div>
 
