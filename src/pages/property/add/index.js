@@ -49,7 +49,8 @@ const AddProperty = () => {
                     <BasicInfo />
                 </div>
 
-                <div className="w-64 border-l bg-background" dir='rtl'>
+                {/* Sidebar (hidden for now)*/}
+                <div className="w-64 border-l bg-background hidden" dir='rtl'>
                     <div className="space-y-4 py-4">
                         <div className="px-3 py-2">
                             <div className="space-y-1">

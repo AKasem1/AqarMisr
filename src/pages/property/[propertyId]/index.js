@@ -8,7 +8,6 @@ import { MongoClient, ObjectId } from 'mongodb';
 
 const index = ({property}) => {
     const router = useRouter()
-    const propertyId = router.query.propertyId
 
     if (!property) {
         console.log(property)
@@ -21,41 +20,11 @@ const index = ({property}) => {
     }
 
     console.log("property: ", property)
-    // const property = {
-    //     "_id": "674208836c5b79b286df2e99",
-    //     "propertyName": "سكن شباب",
-    //     "propertyImages": ["https://images.pexels.com/photos/1370704/pexels-photo-1370704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"],
-    //     "propertyType": "شقة",
-    //     "propertyDescription": "Lorem ipsum odor amet, consectetuer adipiscing elit. Leo praesent eros habitasse porttitor tempus vel tempus? Parturient nunc primis molestie odio, eros rhoncus condimentum magna. Id aliquam ante augue habitant nostra sollicitudin nulla. Bibendum dignissim orci mollis convallis aliquet tristique fermentum. Class class ligula dictum primis eleifend nisl. Aliquam netus mollis quam mus accumsan.Sagittis at faucibus elementum; dictum nascetur eleifend. Auctor dignissim netus habitasse duis; interdum vulputate varius torquent. Venenatis lacus pharetra torquent porta proin sociosqu, fames aliquet. Integer orci viverra luctus blandit sollicitudin scelerisque malesuada lobortis. Potenti vivamus in a; nullam vestibulum lacinia? Habitant platea proin habitant libero vulputate.",
-    //     "currentPrice": "2000",
-    //     "propertyArea": "200",
-    //     "bathrooms": "2",
-    //     "rooms": "4",
-    //     "location": "السويس",
-    //     "city": "السويس",
-    //     features: {
-    //         "hasKitchen": true,
-    //         "hasGarden": true,
-    //         "hasElevator": true,
-    //         "hasCameras": true,
-    //         "hasMeters": true,
-    //         "hasHeating": true,
-    //         "hasAC": true,
-    //         "isFurnished": true,
-    //     },
-    //     "contractType": "إيجار",
-    //     "addedBy": {
-    //         "_id": "6741f74da92da50e152522c3",
-    //         "fullName": "Abdelrahman Kasem",
-    //         "phone": "01062858443"
-    //     },
-    //     "accepted": "rejected"
-    // }
 
     return (
         <>
             <Head>
-                <title>{`Aqar Misr | Property ${propertyId}`}</title>
+                <title>{`Aqar Misr | Property ${property.propertyName}`}</title>
                 <meta name="description" content="" />
             </Head>
             <div className='m-6 p-10 bg-gray-50 rounded-lg shadow-lg'>

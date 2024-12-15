@@ -135,12 +135,12 @@ const RentBasicInfo = (type) => {
 
   return (
     <form
-      className="border rounded-lg p-4 space-y-5"
+      className="border rounded-lg p-24 space-y-5"
       dir="rtl"
       onSubmit={handleSubmit}
     >
       <h2 className="text-xl text-center font-bold mb-4">{contractType == 'إيجار' ? 'معلومات الإيجار' : 'معلومات التمليك'}</h2>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <TextInput
           label="اسم العقار"
           placeholder="اسم العقار"
@@ -163,7 +163,7 @@ const RentBasicInfo = (type) => {
           errorMsg={errors.propertyType ? 'Please select the property type' : ''}
         />
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <NumberInput
           label={contractType == 'إيجار' ? "سعر الايجار الشهري الحالى" : "سعر العقار"}
           placeholder={contractType == 'إيجار' ? "سعر الايجار الشهري الحالى" : "سعر العقار"}
@@ -194,7 +194,7 @@ const RentBasicInfo = (type) => {
           labelIcon={<MapPinned className="size-4"/>}
         />
       </div>
-      <div className="space-y-2 w-2/4">
+      <div className="space-y-2 w-full md:w-2/4">
         <label htmlFor="file_input" className="block mb-2 text-md font-semibold text-gray-900 dark:text-white"> صورة العقار</label>
         <div className="flex border p-2 rounded-xl items-center">
           <input 
@@ -206,7 +206,8 @@ const RentBasicInfo = (type) => {
           <Image className="mr-2 p-px text-gray-400" />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <NumberInput
           label="المساحة بالمتر"
           placeholder="المساحة بالمتر"
