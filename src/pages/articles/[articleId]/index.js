@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Head from 'next/head';
 
 const Article = () => {
   const router = useRouter();
@@ -30,15 +31,21 @@ const Article = () => {
 
   if (!article || !article.title) {
     return (
-      <div className="rtl px-6 py-4">
-        <p className="text-red-500">المقال غير موجود.</p>
-        <button
-          onClick={() => window.history.back()}
-          className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-teal-600 transition-colors"
-        >
-          العودة
-        </button>
-      </div>
+      <>
+        <Head>
+          <title>Aqar Misr | Article</title>
+          <meta name="description" content="المقال المتعلق بالعقار" />
+        </Head>
+        <div className="rtl px-6 py-4">
+          <p className="text-red-500">المقال غير موجود.</p>
+          <button
+            onClick={() => window.history.back()}
+            className="bg-teal-500 text-white px-4 py-2 mt-4 rounded-md hover:bg-teal-600 transition-colors"
+          >
+            العودة
+          </button>
+        </div>
+      </>
     );
   }
 

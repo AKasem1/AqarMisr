@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import Link from 'next/link';
+import Head from 'next/head';
 
 function Articles() {
   const [articles, setArticles] = useState([]);
@@ -27,33 +28,39 @@ function Articles() {
 
 
   return (
-    <div className="space-y-6 rtl px-6 py-4 my-4 min-h-screen">
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {articles.map((article) => (
-          <div
-            key={article._id}
-            className="bg-white rounded-xl shadow-lg overflow-hidden"
-          >
-            <img
-              src={article.image}
-              alt={article.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-teal-600 font-bold text-lg mb-3">
-                {article.title}
-              </h3>
-              <Link
-                href={`/articles/${article._id}`}
-                className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition-colors"
-              >
-                قراءة
-              </Link>
+    <>
+      <Head>
+        <title>Aqar Misr | Articles</title>
+        <meta name="description" content="المقالات المتعلقة بالعقار" />
+      </Head>
+      <div className="space-y-6 rtl px-6 py-4 my-4 min-h-screen">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {articles.map((article) => (
+            <div
+              key={article._id}
+              className="bg-white rounded-xl shadow-lg overflow-hidden"
+            >
+              <img
+                src={article.image}
+                alt={article.title}
+                className="w-full h-48 object-cover"
+              />
+              <div className="p-4">
+                <h3 className="text-teal-600 font-bold text-lg mb-3">
+                  {article.title}
+                </h3>
+                <Link
+                  href={`/articles/${article._id}`}
+                  className="bg-teal-500 text-white px-4 py-2 rounded-md hover:bg-teal-600 transition-colors"
+                >
+                  قراءة
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
